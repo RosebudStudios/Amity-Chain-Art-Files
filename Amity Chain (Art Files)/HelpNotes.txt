@@ -1,0 +1,15 @@
+- I'm using friendlycosmonaut's depth system, it's the exact code with no changes.
+- It works fine in one room, but when I go to the next room, it crashes and says that
+  the sprites dont exist. I believe it's crashing because the objects in the depthobject
+  aren't present in the next room.
+Some other interesting behavior includes:
+
+When I turn off persistence:
+- Both On: Crash from First room to Second
+- Object Off: Crash from Second to first
+- Sorter Off: Invisible
+- Both Off: Invisible and crash from second to first
+
+- When I made the objects in the depth object persistent, everything ran fine, but the 
+  objects draw themselves in the second room too.
+
