@@ -1,0 +1,19 @@
+///Create Event
+dust = 0; //First you define the array that's going to hold one monster's dust. At least in GM:S v1.4 you can't define an empty array, but since GM:S' variables are dynamically typed an int will do for now.
+
+///Execute this ONCE somewhere in the monster BEFORE CREATING THE DUST PARTICLES
+//Save each pixel's color info on a 2d array.
+var xx, yy;
+for (xx = 0; xx < sprite_width; ++xx) {
+  for (yy = 0; yy < sprite_height; ++yy) {
+    dust[xx, yy] = draw_getpixel(xx, yy); //This function is really, really slow.
+  }
+}
+
+///Execue this ONCE somewhere in the monster TO CREATE THE DUST PARTICLES
+var xx, yy;
+for (xx = 0; xx < array_height_2d(dust); ++xx) {
+  for (yy = 0; yy < array_length_2d(dust, xx); ++yy) {
+    if (dust[xx, yy] == $ffffff) { /*Create a particle in position (x + xx, y + yy) here*/ }
+  }
+}
